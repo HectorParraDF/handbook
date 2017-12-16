@@ -1,0 +1,516 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Handbook</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+
+    <!-- Custom styles for this template -->
+    <style>
+      body {
+        padding-top: 5rem;
+      }
+      .starter-template {
+        padding: 3rem 1.5rem;
+        text-align: center;
+      }
+
+      #myInput {
+        background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+        background-position: 10px 12px; /* Position the search icon */
+        background-repeat: no-repeat; /* Do not repeat the icon image */
+        width: 100%; /* Full-width */
+        font-size: 16px; /* Increase font-size */
+        padding: 12px 20px 12px 40px; /* Add some padding */
+        border: 1px solid #ddd; /* Add a grey border */
+        margin-bottom: 12px; /* Add some space below the input */
+      }
+
+      #myTable {
+          border-collapse: collapse; /* Collapse borders */
+          width: 100%; /* Full-width */
+          border: 1px solid #ddd; /* Add a grey border */
+          font-size: 18px; /* Increase font-size */
+      }
+
+      #myTable th, #myTable td {
+          text-align: left; /* Left-align text */
+          padding: 12px; /* Add padding */
+      }
+
+      #myTable tr {
+          /* Add a bottom border to all table rows */
+          border-bottom: 1px solid #ddd; 
+      }
+
+      #myTable tr.header, #myTable tr:hover {
+          /* Add a grey background color to the table header and on hover */
+          background-color: #f1f1f1;
+      }
+    </style>
+
+    <!--MathJax-->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+
+        
+        <table class="table table-sm" id="myTable" style="text-align: left;">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Statement</th>
+              <th scope="col">More...</th>
+              <th scope="col" style="display: none">More...</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Identity</td>
+              <td>$\sigma^i \sigma^j = \delta^{ij} + i\epsilon^{ijk}\sigma^k$</td>
+              <td></td>
+              <td style="display: none">pauli, sigma</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Equation</td>
+              <td>$[\sigma^i, \sigma^j] = 2i\epsilon^{ijk}\sigma^k$</td>
+              <td></td>
+              <td style="display: none">pauli, sigma</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Equation</td>
+              <td>$\{ \sigma^i, \sigma^j\} = 2\delta^{ij} I_{2x2}$</td>
+              <td></td>
+              <td style="display: none">pauli, sigma</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Definition</td>
+              <td>$[A,B] = AB - BA$</td>
+              <td></td>
+              <td style="display: none">commutator</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Definition</td>
+              <td>$\{A,B\} = AB + BA$</td>
+              <td></td>
+              <td style="display: none">anticommutator</td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>Equation</td>
+              <td>$(\sigma^i)^2 = I_{2x2}$</td>
+              <td></td>
+              <td style="display: none">pauli, sigma</td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>Equation</td>
+              <td>$-i\sigma^1\sigma^2\sigma^3 = I_{2x2}$</td>
+              <td></td>
+              <td style="display: none">pauli, sigma</td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>Equation</td>
+              <td>$\det \sigma^i = -1$</td>
+              <td></td>
+              <td style="display: none">pauli, sigma</td>
+            </tr>
+            <tr>
+              <th scope="row">9</th>
+              <td>Equation</td>
+              <td>$\text{Tr } \sigma^i = 0$</td>
+              <td></td>
+              <td style="display: none">pauli, sigma</td>
+            </tr>
+            <tr>
+              <th scope="row">10</th>
+              <td>Definition</td>
+              <td>$\vec \sigma = \sigma^1 \hat x +\sigma^2 \hat y + \sigma^3 \hat z  $</td>
+              <td></td>
+              <td style="display: none">pauli, sigma, vector</td>
+            </tr>
+            <tr>
+              <th scope="row">11</th>
+              <td>Definition</td>
+              <td>$P_\mu = -i\partial_\mu$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">12</th>
+              <td>Definition</td>
+              <td>$L_{\mu \nu} = i(x_\mu \partial_\nu - x_\nu \partial_\mu) $</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">13</th>
+              <td>Definition</td>
+              <td>$D = -ix^\mu \partial_\mu$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">14</th>
+              <td>Definition</td>
+              <td>$K_\mu = -i(2x_\mu x^\nu \partial_\nu - x^2\partial_\mu)$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">15</th>
+              <td>Equation</td>
+              <td>$[D, P_\mu] = iP_\mu$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">16</th>
+              <td>Equation</td>
+              <td>$[D, K_\mu] = -iK_\mu$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">17</th>
+              <td>Equation</td>
+              <td>$[K_\mu, P_\nu] = 2i(\eta_{\mu \nu}D - L_{\mu \nu})$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">18</th>
+              <td>Equation</td>
+              <td>$[K_\rho, L_{\mu \nu}] = i (\eta_{\rho \mu}K_\nu - \eta_{\rho \nu}K_{\mu})$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">19</th>
+              <td>Equation</td>
+              <td>$[P_\rho, L_{\mu \nu}] = i (\eta_{\rho \mu}P_\nu - \eta_{\rho \nu}P_{\mu})$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">20</th>
+              <td>Equation</td>
+              <td>$[L_{\mu \nu}, L_{\rho \sigma}] = i(\eta_{\nu \rho}L_{\mu \sigma} + \eta_{\mu \sigma}L_{\nu \rho} - \eta_{\mu \rho}L_{\nu \sigma} - \eta_{\nu \sigma}L_{\mu \rho}) $</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">21</th>
+              <td>Equation</td>
+              <td>$e^{-A}Be^A = B + [B,A] + \frac{1}{2!}[[B,A],A] + \frac{1}{3!}[[[B,A],A],A] + ...$</td>
+              <td></td>
+              <td style="display: none">sugar</td>
+            </tr>
+            <tr>
+              <th scope="row">22</th>
+              <td>Equation</td>
+              <td>$P_\mu \Phi(x) = -i\partial_\mu \Phi(x)$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">23</th>
+              <td>Equation</td>
+              <td>$L_{\mu \nu} \Phi(x) = i( x_\mu \partial_\nu - x_\nu \partial_\mu) \Phi(x) + S_{\mu \nu} \Phi(x)$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">24</th>
+              <td>Equation</td>
+              <td>$D\Phi(x) = -i(x^\mu \partial_\mu + \Delta)\Phi(x)$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">25</th>
+              <td>Equation</td>
+              <td>$K_\mu \Phi(x) = (-2i\Delta x_\mu - x^\nu S_{\mu \nu} - 2ix_\mu x^\nu \partial_\nu + ix^2\partial_\mu)\Phi(x)$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">26</th>
+              <td>Definition</td>
+              <td>$\phi(x) \to \phi'(x') = \left | \frac{\partial x'}{\partial x}\right |^{-\Delta/d} \phi(x)$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">27</th>
+              <td>Equation</td>
+              <td>$\Delta = \frac{1}{2}d - 1$</td>
+              <td></td>
+              <td style="display: none">conformal</td>
+            </tr>
+            <tr>
+              <th scope="row">28</th>
+              <td>Equation</td>
+              <td>$\sigma^2 \sigma^i \sigma^2 = -\sigma^{i*}$</td>
+              <td></td>
+              <td style="display: none">pauli, sigma</td>
+            </tr>
+            <tr>
+              <th scope="row">29</th>
+              <td>Definition</td>
+              <td>$x^\pm = \frac{1}{\sqrt{2}}(x^0 \pm x^1)$</td>
+              <td></td>
+              <td style="display: none">string, light-cone</td>
+            </tr>
+            <tr>
+              <th scope="row">30</th>
+              <td>Equation</td>
+              <td>$-ds^2 = -2dx^+ dx^- + (dx^2)^2 + (dx^3)^2$</td>
+              <td></td>
+              <td style="display: none">string, light-cone</td>
+            </tr>
+            <tr>
+              <th scope="row">31</th>
+              <td>Equation</td>
+              <td>$dx^-/dx^+ = (1-\beta)/(1+\beta)$</td>
+              <td></td>
+              <td style="display: none">string, light-cone</td>
+            </tr>
+            <tr>
+              <th scope="row">32</th>
+              <td>Equation</td>
+              <td>$E = \gamma m c^2$</td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">33</th>
+              <td>Equation</td>
+              <td>$\vec p = \gamma m \vec v$</td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">34</th>
+              <td>Equation</td>
+              <td>$p^\mu p_\mu = -m^2 c^2$</td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">35</th>
+              <td>Equation</td>
+              <td>$ds = cd\tau$</td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">36</th>
+              <td>Equation</td>
+              <td>$p^\mu = m u^\mu$</td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">37</th>
+              <td>Equation</td>
+              <td>$u^\mu = \gamma (c, \vec v)$</td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">38</th>
+              <td>Equation</td>
+              <td>$a_\pm = - a^\mp$</td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">39</th>
+              <td>Equation</td>
+              <td>$[x^i, p_j] = i\hbar \delta^i_j$</td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">40</th>
+              <td>Equation</td>
+              <td>$-\frac{\hbar^2}{2m}\nabla^2 \psi (x) + V(x)\psi(x) = E\psi(x)$</td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">41</th>
+              <td>Equation</td>
+              <td></td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">42</th>
+              <td>Equation</td>
+              <td></td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">43</th>
+              <td>Equation</td>
+              <td></td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">44</th>
+              <td>Equation</td>
+              <td></td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">45</th>
+              <td>Equation</td>
+              <td></td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">46</th>
+              <td>Equation</td>
+              <td></td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">47</th>
+              <td>Equation</td>
+              <td></td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">48</th>
+              <td>Equation</td>
+              <td></td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">49</th>
+              <td>Equation</td>
+              <td></td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+            <tr>
+              <th scope="row">50</th>
+              <td>Equation</td>
+              <td></td>
+              <td></td>
+              <td style="display: none">relativity</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+  
+    <!-- Search script -->
+    <script>
+    function myFunction() {
+      // Declare variables 
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[3];
+        if (td) {
+          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        } 
+      }
+    }
+    </script>
+  </body>
+</html>
