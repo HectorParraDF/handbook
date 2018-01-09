@@ -80,25 +80,27 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-2 border border-left-0 border-top-0 border-bottom-0">
-          <!--EMPTY (LEFT MARGIN)-->
-          <br />
-          <h6><a style="text-decoration: none; color: black;" onclick="document.getElementById('DIRAC').style.display = '';document.getElementById('STRINGS').style.display = 'none';" href="#">The Dirac Field</a></h6>          
-          <h6><a style="text-decoration: none; color: black;" onclick="document.getElementById('DIRAC').style.display = 'none';document.getElementById('STRINGS').style.display = '';" href="#">String Theory</a></h6>
+          <!--Side Navigation Bar-->
+            <br />
+            <h6><a style="text-decoration: none; color: black;" onclick="leftNavClick(0)" href="#">Quantum Field Theory</a></h6>          
+            <h6><a style="text-decoration: none; color: black;" onclick="leftNavClick(1)" href="#">String Theory</a></h6>
+            <h6><a style="text-decoration: none; color: black;" onclick="leftNavClick(2)" href="#">Differential Geometry</a></h6>
         </div>
         <div class="col-6">
         <!--SEARCH FOR FORMULAS HERE-->
         <br />
         <!-- DIRAC FIELD -->
-        <div id="DIRAC" style="display: none">
-          <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search" aria-label="Search">
+        <div class="formula-page" style="display: none">
+          <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search (NOT IMPLEMENTED)" aria-label="Search">
           <br />
           <table class="table table-sm" id="myTable" style="text-align: left;">
-            <tbody>
+
+            <tbody class = "formula-container">
 
               <tr>
-                <td onmouseenter="document.getElementById('Description').innerHTML=document.getElementById('_diracAlgebra').innerHTML">
+                <td>
                   <div class="formula-box">$$ \{\gamma^\mu, \gamma^\nu\} = 2\eta^{\mu \nu}\times\mathbb{I}_{n\times n} $$</div>
-                  <div id="_diracAlgebra" style="display: none;">
+                  <div class="description" style="display: none;">
                     <h5>Dirac Algebra</h5>
                     <p>Where $n$ is the dimension of the matrices and $\mathbb{I}_{n\times n}$ the corresponding identity matrix.</p>
                     <p>The matrices that satisfy these anticommutation relations are reffered to as gamma or Dirac matrices.</p>
@@ -111,23 +113,23 @@
               </tr>
 
               <tr>
-                <td onmouseenter="document.getElementById('Description').innerHTML=document.getElementById('_spinRep').innerHTML">
+                <td>
                   <!--Mathematical Expression-->
                   <div class="formula-box">$$ S^{\mu \nu} = \frac{i}{4} [\gamma^\mu, \gamma^\nu ] $$</div>
                   <!--Description-->
-                  <div id="_spinRep" style="display: none;">
+                  <div class="description" style="display: none;">
                     <h5>Spinorial Representation</h5>
                   </div>
                 </td>
               </tr>
 
               <tr>
-                <td onmouseenter="document.getElementById('Description').innerHTML=document.getElementById('_weylRep').innerHTML">
+                <td>
                   <!--Mathematical Expression-->
                   <div class="formula-box">$$\gamma^0 = \begin{pmatrix}0 & \mathbb{I}_{2\times 2}\\\ \mathbb{I}_{2\times 2} & 0\end{pmatrix}$$</div>;
                   <div class="formula-box">$$\gamma^i = \begin{pmatrix}0 & \sigma^i\\\ -\sigma^i & 0\end{pmatrix}$$</div>
                   <!--Description-->
-                  <div id="_weylRep" style="display: none;">
+                  <div class="description" style="display: none;">
                     <h5>Weyl Representation</h5>
                   </div>
                 </td>
@@ -138,16 +140,16 @@
         </div>      
 
         <!-- STRINGS -->
-        <div id="STRINGS" style="display: none;">
-          <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search" aria-label="Search">
+        <div class="formula-page" style="display: none;">
+          <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search (NOT IMPLEMENTED)" aria-label="Search">
           <br />
           <table class="table table-sm" id="myTable" style="text-align: left;">
-            <tbody>
+            <tbody class = "formula-container">
 
               <tr>
-                <td onmouseenter="document.getElementById('Description').innerHTML=document.getElementById('_motionStrings').innerHTML">
+                <td>
                   <div class="formula-box">$$ X^\mu(\tau, \sigma) = x_0^\mu + 2\alpha' p^\mu \tau - i\sqrt{2\alpha'} \sum_{n=1}^\infty (a_n^{\mu*} e^{in\tau} - a_n^{\mu} e^{-in\tau})\frac{\cos n\sigma}{\sqrt{n}} $$</div>
-                  <div id="_motionStrings" style="display: none;">
+                  <div class="description" style="display: none;">
                     <h5>Motion of a relativistic string</h5>
                     <p>Where $x_0^\mu$ is the zero mode.</p>
 
@@ -162,6 +164,48 @@
           </table>
         </div>
 
+        <!-- DIFF GEO -->
+        <div class="formula-page" style="display: none;">
+          <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search (NOT IMPLEMENTED)" aria-label="Search">
+          <br />
+          <table class="table table-sm" id="myTable" style="text-align: left;">
+            <tbody class = "formula-container">
+
+              <tr>
+                <td>
+                  <div class="formula-box">$$ \delta \phi := (-1)^{np + n + 1 + s} \ast d \ast \phi $$</div>
+                  <div class="description" style="display: none;">
+                    <h5>Coderivative</h5>
+                    <p>Where $\phi$ is a $p$-form defined in a open subset of $\mathbb{R}^n$, which has an orientation $\omega$ and a a metric $g$ of signature $r-s$. $\ast$ is the Hodge star and $d$ is the exterior derivative. </p>
+
+                    <h6>Properties</h6>
+                    <div style="display: inline-block;">$$ \delta^2 = 0$$</div>                    
+
+                    <h6>LaTeX</h6>
+                    <div style="background-color: #f1f1f1; padding-left: 12px">
+                      <pre><code>\delta \phi := (-1)^{np + n + 1 + s} \ast d \ast \phi</code></pre>
+                    </div>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>
+                  <div class="formula-box">$$ \Delta:= -(d\delta + \delta d) $$</div>
+                  <div class="description" style="display: none;">
+                    <h5>Laplacian (d'Alambertian)</h5>
+                    <p>This is a map from and to $p$-forms. It's called Laplacian if the metric is positive-definite. If $r = 1$, it's called the d'Alambert operator and written $\Box$.</p>
+
+                    <h6>LaTeX</h6>
+                    <div style="background-color: #f1f1f1; padding-left: 12px">
+                      <pre><code>\Delta:= -(d\delta \delta d)</code></pre>
+                    </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
         </div>
         <div class="col-4 border border-right-0 border-top-0 border-bottom-0">
           <!--DESCRIPTION FOR THE FORMULAS-->
@@ -171,33 +215,73 @@
       </div>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-        <!-- Search script -->
-    <script>
-    function myFunction() {
-      // Declare variables 
-      var input, filter, table, tr, td, i;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("myTable");
-      tr = table.getElementsByTagName("tr");
+    <!-- Button for code testing 
+      <a href="#" onclick="descriptionHover(0,1)">CLICK ME</a> 
+    -->
 
-      // Loop through all table rows, and hide those who don't match the search query
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[3];
-        if (td) {
-          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        } 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    
+    <!-- Scripts for pagination-->
+    <script>
+      var formula_pages, formula_containers, formulas;
+
+      formula_pages = document.getElementsByClassName("formula-page");  //List of pages
+      
+      formula_containers = document.getElementsByClassName("formula-container"); //List of containers
+      formulas = [];
+      for (i = 0; i < formula_containers.length; i++) {
+        formulas[i] = formula_containers[i].getElementsByTagName("tr"); //Nested list of formulas in containers
+        
+        for (j = 0; j < formulas[i].length; j++) {
+          (function (i,j) {
+            var form = formulas[i][j];
+            form.addEventListener("mouseenter", function(){descriptionHover(i,j)}, false);
+          })(i,j);
+        }
       }
-    }
+
+
+      function descriptionHover(ii,jj) {
+        var form, desc;
+        form = formulas[ii][jj];
+        desc = form.getElementsByClassName("description");
+        document.getElementById("Description").innerHTML = desc[0].innerHTML;
+      }      
+
+      function leftNavClick(ID) {
+        for (i = 0; i < formula_pages.length; i++) {
+          formula_pages[i].style.display = "none";  //Hide every page
+        }
+        formula_pages[ID].style.display = ""; //Show the desired page
+      }
+
     </script>
+
+    <!-- Search script -->
+      <script>
+        function myFunction() {
+          // Declare variables 
+          var input, filter, table, tr, td, i;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[3];
+            if (td) {
+              if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            } 
+          }
+        }
+      </script>
   </body>
 </html>
