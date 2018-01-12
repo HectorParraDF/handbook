@@ -30,19 +30,19 @@
 
       }
 
-      #myTable {
+      .formula-table {
           width: 100%; /* Full-width */
           font-size: 18px; /* Increase font-size */
           border: none;
       }
 
-      #myTable th, #myTable td {
+      .formula-table th, .formula-table td {
           text-align: left; /* Left-align text */
           padding: 0px; /* Add padding */
           border: none;
       }
 
-      #myTable tr.header, #myTable tr:hover {
+      .formula-table tr.header, .formula-table tr:hover {
           /* Add a grey background color to the table header and on hover */
           background-color: #f9f9f9;
       }
@@ -54,7 +54,7 @@
 
     </style>
   </head>
-  <body>
+  <body onload="sidebarFormulaCounter();">
     <!-- Top Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <!--  For branding purposes. Not required!
@@ -79,7 +79,7 @@
     <!-- Content itself -->
     <div class="container-fluid">
       <div class="row">
-        <div class="col-2 border border-left-0 border-top-0 border-bottom-0">
+        <div class="col-2 border border-left-0 border-top-0 border-bottom-0" id="SideBar">
           <!--Side Navigation Bar-->
             <br />
             <h6><a style="text-decoration: none; color: black;" onclick="leftNavClick(0)" href="#">Quantum Field Theory</a></h6>          
@@ -92,9 +92,9 @@
         <br />
         <!-- DIRAC FIELD -->
           <div class="formula-page" style="display: none">
-            <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search (NOT IMPLEMENTED)" aria-label="Search">
+            <input class="form-control formula-search" type="search" onkeyup="myFunction()" placeholder="Search..." aria-label="Search">
             <br />
-            <table class="table table-sm" id="myTable" style="text-align: left;">
+            <table class="table table-sm formula-table" style="text-align: left;">
 
               <tbody class = "formula-container">
 
@@ -139,9 +139,9 @@
 
         <!-- STRINGS -->
           <div class="formula-page" style="display: none;">
-            <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search (NOT IMPLEMENTED)" aria-label="Search">
+            <input class="form-control formula-search" type="search" onkeyup="myFunction()" placeholder="Search..." aria-label="Search">
             <br />
-            <table class="table table-sm" id="myTable" style="text-align: left;">
+            <table class="table table-sm formula-table" style="text-align: left;">
               <tbody class = "formula-container">
 
                 <tr>
@@ -160,9 +160,9 @@
 
         <!-- DIFF GEO -->
           <div class="formula-page" style="display: none;">
-            <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search (NOT IMPLEMENTED)" aria-label="Search">
+            <input class="form-control formula-search" type="search" onkeyup="myFunction()" placeholder="Search..." aria-label="Search">
             <br />
-            <table class="table table-sm" id="myTable" style="text-align: left;">
+            <table class="table table-sm formula-table" style="text-align: left;">
               <tbody class = "formula-container">
 
                 <tr>
@@ -170,7 +170,7 @@
                     <div class="formula-box">$$ \ast (dx^{i_1} \wedge \dots \wedge dx^{i_p}) = \frac{\sqrt{|g|}}{(m-p)!} {\varepsilon^{i_1 \dots i_p}}_{i_{p+1} \dots i_m} dx^{i_{p+1}}\wedge \dots \wedge dx^m $$</div>
                     <div class="description" style="display: none;">
                       <h5>Action of the Hodge star</h5>
-                      <p>Where $m$ is the dimension of the underlying manifold.</p>                  
+                      <p>Where $m$ is the dimension of the underlying manifold and $g$ is the determinand of the metric.</p>                  
                     </div>                            
                   </td>
                 </tr>
@@ -294,9 +294,9 @@
 
           <!-- RICCI CALCULUS -->
         <div class="formula-page" style="display: none;">
-          <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search (NOT IMPLEMENTED)" aria-label="Search">
+          <input class="form-control formula-search" type="search" onkeyup="myFunction()" placeholder="Search..." aria-label="Search">
           <br />
-          <table class="table table-sm" id="myTable" style="text-align: left;">
+          <table class="table table-sm formula-table" style="text-align: left;">
             <tbody class = "formula-container">
 
               <tr>
@@ -332,7 +332,7 @@
 
     <!-- Button for code testing 
       <a href="#" onclick="descriptionHover(0,1)">CLICK ME</a> 
-    -->
+    --> 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -373,6 +373,14 @@
         formula_pages[ID].style.display = ""; //Show the desired page
       }
 
+      sidebar_elements = document.getElementById("SideBar").getElementsByTagName("a");
+      
+      function sidebarFormulaCounter() {
+        for (i = 0; i < sidebar_elements.length; i++) {
+          sidebar_elements[i].innerHTML = sidebar_elements[i].innerHTML.concat(" (",formulas[i].length,")")
+        }
+      }
+
     </script>
 
     <!-- Search script -->
@@ -380,21 +388,40 @@
         function myFunction() {
           // Declare variables 
           var input, filter, table, tr, td, i;
-          input = document.getElementById("myInput");
-          filter = input.value.toUpperCase();
-          table = document.getElementById("myTable");
-          tr = table.getElementsByTagName("tr");
+          input = document.getElementsByClassName("form-control formula-search");
+          table = document.getElementsByClassName("table table-sm formula-table");
+          filter = [];
+          tr = [];
+          for (i = 0; i < table.length; i++) {
+            filter[i] = input[i].value.toUpperCase();
+            tr[i] = table[i].getElementsByTagName("tr");
+          }
 
           // Loop through all table rows, and hide those who don't match the search query
-          for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[3];
-            if (td) {
-              if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-              } else {
-                tr[i].style.display = "none";
-              }
-            } 
+          for (i = 0; i < table.length; i++) {
+            for (j = 0; j < tr[i].length; j++) {
+              td = tr[i][j].getElementsByTagName("td")[0];
+              if (td) {
+                var filtersplit = filter[i].split(" ");
+                var contained;
+
+                for (k = 0; k < filtersplit.length; k++) {
+                  if (td.innerHTML.toUpperCase().indexOf(filtersplit[k].trim()) > -1) {
+                    contained = 1;
+                  } else {
+                    contained = 0;
+                    break
+                  }
+
+                }
+
+                if (contained) {
+                  tr[i][j].style.display = "";
+                } else {
+                  tr[i][j].style.display = "none";
+                }
+              } 
+            }
           }
         }
       </script>
