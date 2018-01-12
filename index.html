@@ -85,86 +85,214 @@
             <h6><a style="text-decoration: none; color: black;" onclick="leftNavClick(0)" href="#">Quantum Field Theory</a></h6>          
             <h6><a style="text-decoration: none; color: black;" onclick="leftNavClick(1)" href="#">String Theory</a></h6>
             <h6><a style="text-decoration: none; color: black;" onclick="leftNavClick(2)" href="#">Differential Geometry</a></h6>
+            <h6><a style="text-decoration: none; color: black;" onclick="leftNavClick(3)" href="#">Ricci Calculus</a></h6>
         </div>
-        <div class="col-6">
+        <div class="col-6" style="height: 90vh; overflow-y: scroll;">
         <!--SEARCH FOR FORMULAS HERE-->
         <br />
         <!-- DIRAC FIELD -->
-        <div class="formula-page" style="display: none">
-          <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search (NOT IMPLEMENTED)" aria-label="Search">
-          <br />
-          <table class="table table-sm" id="myTable" style="text-align: left;">
+          <div class="formula-page" style="display: none">
+            <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search (NOT IMPLEMENTED)" aria-label="Search">
+            <br />
+            <table class="table table-sm" id="myTable" style="text-align: left;">
 
-            <tbody class = "formula-container">
+              <tbody class = "formula-container">
 
-              <tr>
-                <td>
-                  <div class="formula-box">$$ \{\gamma^\mu, \gamma^\nu\} = 2\eta^{\mu \nu}\times\mathbb{I}_{n\times n} $$</div>
-                  <div class="description" style="display: none;">
-                    <h5>Dirac Algebra</h5>
-                    <p>Where $n$ is the dimension of the matrices and $\mathbb{I}_{n\times n}$ the corresponding identity matrix.</p>
-                    <p>The matrices that satisfy these anticommutation relations are reffered to as gamma or Dirac matrices.</p>
-                    <p>$\eta^{\mu \nu} = \text{diag} (1,-1,-1,-1)$</p>
-                    <h6>LaTeX</h6>
-                    <div style="background-color: #f1f1f1; padding-left: 12px">
-                      <pre><code>\{\gamma^\mu, \gamma^\nu\} = 2\eta^{\mu \nu}\times\mathbb{I}_{n\times n}</code></pre>
+                <tr>
+                  <td>
+                    <div class="formula-box">$$ \{\gamma^\mu, \gamma^\nu\} = 2\eta^{\mu \nu}\times\mathbb{I}_{n\times n} $$</div>
+                    <div class="description" style="display: none;">
+                      <h5>Dirac Algebra</h5>
+                      <p>Where $n$ is the dimension of the matrices and $\mathbb{I}_{n\times n}$ the corresponding identity matrix.</p>
+                      <p>The matrices that satisfy these anticommutation relations are reffered to as gamma or Dirac matrices.</p>
+                      <p>$\eta^{\mu \nu} = \text{diag} (1,-1,-1,-1)$</p>
                     </div>
-                </td>
-              </tr>
+                  </td>
+                </tr>
 
-              <tr>
-                <td>
-                  <!--Mathematical Expression-->
-                  <div class="formula-box">$$ S^{\mu \nu} = \frac{i}{4} [\gamma^\mu, \gamma^\nu ] $$</div>
-                  <!--Description-->
-                  <div class="description" style="display: none;">
-                    <h5>Spinorial Representation</h5>
-                  </div>
-                </td>
-              </tr>
+                <tr>
+                  <td>
+                    <!--Mathematical Expression-->
+                    <div class="formula-box">$$ S^{\mu \nu} = \frac{i}{4} [\gamma^\mu, \gamma^\nu ] $$</div>
+                    <!--Description-->
+                    <div class="description" style="display: none;">
+                      <h5>Spinorial Representation</h5>
+                    </div>
+                  </td>
+                </tr>
 
-              <tr>
-                <td>
-                  <!--Mathematical Expression-->
-                  <div class="formula-box">$$\gamma^0 = \begin{pmatrix}0 & \mathbb{I}_{2\times 2}\\\ \mathbb{I}_{2\times 2} & 0\end{pmatrix}$$</div>;
-                  <div class="formula-box">$$\gamma^i = \begin{pmatrix}0 & \sigma^i\\\ -\sigma^i & 0\end{pmatrix}$$</div>
-                  <!--Description-->
-                  <div class="description" style="display: none;">
-                    <h5>Weyl Representation</h5>
-                  </div>
-                </td>
-              </tr>
-              
-            </tbody>
-          </table>    
-        </div>      
+                <tr>
+                  <td>
+                    <!--Mathematical Expression-->
+                    <div class="formula-box">$$\gamma^0 = \begin{pmatrix}0 & \mathbb{I}_{2\times 2}\\\ \mathbb{I}_{2\times 2} & 0\end{pmatrix}$$</div>;
+                    <div class="formula-box">$$\gamma^i = \begin{pmatrix}0 & \sigma^i\\\ -\sigma^i & 0\end{pmatrix}$$</div>
+                    <!--Description-->
+                    <div class="description" style="display: none;">
+                      <h5>Weyl Representation</h5>
+                    </div>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>    
+          </div>      
 
         <!-- STRINGS -->
-        <div class="formula-page" style="display: none;">
-          <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search (NOT IMPLEMENTED)" aria-label="Search">
-          <br />
-          <table class="table table-sm" id="myTable" style="text-align: left;">
-            <tbody class = "formula-container">
+          <div class="formula-page" style="display: none;">
+            <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search (NOT IMPLEMENTED)" aria-label="Search">
+            <br />
+            <table class="table table-sm" id="myTable" style="text-align: left;">
+              <tbody class = "formula-container">
 
-              <tr>
-                <td>
-                  <div class="formula-box">$$ X^\mu(\tau, \sigma) = x_0^\mu + 2\alpha' p^\mu \tau - i\sqrt{2\alpha'} \sum_{n=1}^\infty (a_n^{\mu*} e^{in\tau} - a_n^{\mu} e^{-in\tau})\frac{\cos n\sigma}{\sqrt{n}} $$</div>
-                  <div class="description" style="display: none;">
-                    <h5>Motion of a relativistic string</h5>
-                    <p>Where $x_0^\mu$ is the zero mode.</p>
-
-                    <h6>LaTeX</h6>
-                    <div style="background-color: #f1f1f1; padding-left: 12px">
-                      <pre><code>X^\mu(\tau, \sigma) = x_0^\mu + 2\alpha' p^\mu \tau - i\sqrt{2\alpha'} \sum_{n=1}^\infty (a_n^{\mu*} e^{in\tau} - a_n^{\mu} e^{-in\tau})\frac{\cos n\sigma}{\sqrt{n}}</code></pre>
+                <tr>
+                  <td>
+                    <div class="formula-box">$$ X^\mu(\tau, \sigma) = x_0^\mu + 2\alpha' p^\mu \tau - i\sqrt{2\alpha'} \sum_{n=1}^\infty (a_n^{\mu*} e^{in\tau} - a_n^{\mu} e^{-in\tau})\frac{\cos n\sigma}{\sqrt{n}} $$</div>
+                    <div class="description" style="display: none;">
+                      <h5>Motion of a relativistic string</h5>
+                      <p>Where $x_0^\mu$ is the zero mode.</p>
                     </div>
-                </td>
-              </tr>
-              
-            </tbody>
-          </table>
-        </div>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
 
         <!-- DIFF GEO -->
+          <div class="formula-page" style="display: none;">
+            <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search (NOT IMPLEMENTED)" aria-label="Search">
+            <br />
+            <table class="table table-sm" id="myTable" style="text-align: left;">
+              <tbody class = "formula-container">
+
+                <tr>
+                  <td>
+                    <div class="formula-box">$$ \ast (dx^{i_1} \wedge \dots \wedge dx^{i_p}) = \frac{\sqrt{|g|}}{(m-p)!} {\varepsilon^{i_1 \dots i_p}}_{i_{p+1} \dots i_m} dx^{i_{p+1}}\wedge \dots \wedge dx^m $$</div>
+                    <div class="description" style="display: none;">
+                      <h5>Action of the Hodge star</h5>
+                      <p>Where $m$ is the dimension of the underlying manifold.</p>                  
+                    </div>                            
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="formula-box">$$ \delta \varphi := (-1)^{np + n + 1 + s} \ast d \ast \varphi $$</div>
+                    <div class="description" style="display: none;">
+                      <h5>Coderivative</h5>
+                      <p>Where $\varphi$ is a $p$-form defined in a open subset of $\mathbb{R}^n$, which has an orientation $\omega$ and a a metric $g$ of signature $r-s$. $\ast$ is the Hodge star and $d$ is the exterior derivative. </p>
+
+                      <h6>Properties</h6>
+                      <div style="display: inline-block;">$$ \delta^2 = 0$$</div>                    
+                    </div>                            
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td>
+                    <div class="formula-box">$$ \Delta:= -(d\delta + \delta d) $$</div>
+                    <div class="description" style="display: none;">
+                      <h5>Laplacian (d'Alambertian)</h5>
+                      <p>This is a map from and to $p$-forms. It's called Laplacian if the metric is positive-definite. If $r = 1$, it's called the d'Alambert operator and written $\Box$.</p>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="formula-box">$$ dx^{i_1} \wedge \dots \wedge dx^{i_m} = \varepsilon^{i_1 \dots i_m} dx^1 \wedge \dots \wedge dx^m $$</div>
+                    <div class="description" style="display: none;">
+                      <h5>Useful formula #115</h5>
+                      <p>Where $m$ is the dimension of the underlying manifold. In spacetime notation,</p>
+                      $$ dx^{\mu_0} \wedge \dots \wedge dx^{\mu_d} = \varepsilon^{\mu_0 \dots \mu_d} dx^0 \wedge \dots \wedge dx^d $$
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="formula-box">$$ \varphi \wedge \ast \psi = \frac{1}{p!} \varphi_{i_1 \dots i_m} \psi^{i_1 \dots i_m} \Omega_M $$</div>
+                    <div class="description" style="display: none;">
+                      <h5>Useful formula #204</h5>
+                      <p>Where $\varphi$ and $\psi$ are $p$-forms and $\Omega_M$ is the invariant volume element of the manifold $M$ of dimension $m$. Note that this equation implies that</p>
+                      $$ \varphi \wedge \ast \psi = \psi \wedge \ast \varphi $$
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="formula-box">$$ d(\varphi \wedge \psi) = (d\psi) \wedge \psi + (-1)^p \varphi \wedge d \psi $$</div>
+                    <div class="description" style="display: none;">
+                      <h5>Exterior derivative of wedge product</h5>
+                      <p>Where $\varphi$ is $p$-form and $\psi$ a $q$-form.</p>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="formula-box">$$ \int d\varphi \wedge \ast \psi = \int \varphi \wedge \ast \delta \psi $$</div>
+                    <div class="description" style="display: none;">
+                      <h5>Useful property #83</h5>
+                      <p>Where $\varphi$ is a $p-1$-form and $\psi$ is a $p$-form. This equation holds if the term $\int d (\varphi \wedge \ast \psi)$ vanishes. This condition can be met if we take $\varphi$ with compact support.</p>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="formula-box">$$ \ast \ast \omega = (-1)^{\alpha + p(m-1)} \omega $$</div>
+                    <div class="description" style="display: none;">
+                      <h5>Hodge star squared</h5>
+                      <p>Where $\omega$ is a $p$-form, $m$ is the dimension of the manifold $M$ and $\alpha$ is equal to zero if $M$ is Riemannian and equal to one if $M$ is Lorentzian.</p>
+
+                      <h6>Particular cases</h6>
+                      <p>For $M = (\mathbb{R}^4, \eta)$, with $\eta$ a Minkowskian metric, </p>
+                      $$ \ast \ast \omega = (-1)^{1 + p} \omega,$$
+                      <p>i.e., for forms of even $p$ such as the field strength $F$, $\ast^2 = -1$, while for those with odd $p$ such as the potential $A$ or the current $j$, $\ast^2 = 1$. </p>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="formula-box">$$ S[A] = \int (-\frac{1}{2} F \wedge \ast F - j \wedge A) $$</div>
+                    <div class="description" style="display: none;">
+                      <h5>Action for electromagnetism</h5>
+                      <p>Where $F$ is the field strength $2$-form, $A$ is the potential $1$-form and $j$ is the current $3$-form.</p>
+                      <p>Using coordinates, this equation reads:</p>
+                      <div style="display: inline-block;">$$ S[A] = \int (-\frac{1}{4} F_{\mu \nu} F^{\mu \nu} + j_\mu A^\mu )dx^0\wedge dx^1\wedge dx^2\wedge dx^3 $$</div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="formula-box">$$ S[A + d\Lambda] - S[A] = 0 \iff dj = 0 $$</div>
+                    <div class="description" style="display: none;">
+                      <h5>Statement #444</h5>
+                      <p>Maxwell's action is gauge invariant only if current is conserved.</p>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="formula-box">$$ \delta d A = \ast j $$</div>
+                    <div class="description" style="display: none;">
+                      <h5>Equation of motion for the electromagnetic potential</h5>
+                      <p>If we choose Lorenz gauge $\delta A = $, this equation takes the form</p>
+                      $$ \Box A = - \ast j $$
+                    </div>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <!-- RICCI CALCULUS -->
         <div class="formula-page" style="display: none;">
           <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search (NOT IMPLEMENTED)" aria-label="Search">
           <br />
@@ -173,32 +301,19 @@
 
               <tr>
                 <td>
-                  <div class="formula-box">$$ \delta \phi := (-1)^{np + n + 1 + s} \ast d \ast \phi $$</div>
+                  <div class="formula-box">$$ \varepsilon_{i_1 \dots i_k ~ i_{k+1} \dots i_n} \varepsilon^{i_1 \dots i_k ~ j_{k+1} \dots j_n} = k!(n-k)!\delta^{j_{k+1}}_{[i_{k+1}} \dots \delta^{j_n}_{i_n]} $$</div>
                   <div class="description" style="display: none;">
-                    <h5>Coderivative</h5>
-                    <p>Where $\phi$ is a $p$-form defined in a open subset of $\mathbb{R}^n$, which has an orientation $\omega$ and a a metric $g$ of signature $r-s$. $\ast$ is the Hodge star and $d$ is the exterior derivative. </p>
-
-                    <h6>Properties</h6>
-                    <div style="display: inline-block;">$$ \delta^2 = 0$$</div>                    
-
-                    <h6>LaTeX</h6>
-                    <div style="background-color: #f1f1f1; padding-left: 12px">
-                      <pre><code>\delta \phi := (-1)^{np + n + 1 + s} \ast d \ast \phi</code></pre>
-                    </div>
+                    <h5>Contraction formula for epsilons</h5>
+                  </div>
                 </td>
               </tr>
-              
+
               <tr>
                 <td>
-                  <div class="formula-box">$$ \Delta:= -(d\delta + \delta d) $$</div>
+                  <div class="formula-box">$$ A^{[i_1 \dots i_n]} = \frac{1}{n!}\epsilon^{i_1 \dots i_n} \epsilon_{j_1 \dots j_n} A^{j_1 \dots j_n} $$</div>
                   <div class="description" style="display: none;">
-                    <h5>Laplacian (d'Alambertian)</h5>
-                    <p>This is a map from and to $p$-forms. It's called Laplacian if the metric is positive-definite. If $r = 1$, it's called the d'Alambert operator and written $\Box$.</p>
-
-                    <h6>LaTeX</h6>
-                    <div style="background-color: #f1f1f1; padding-left: 12px">
-                      <pre><code>\Delta:= -(d\delta \delta d)</code></pre>
-                    </div>
+                    <h5>Antisymmetrization formula</h5>
+                  </div>
                 </td>
               </tr>
 
